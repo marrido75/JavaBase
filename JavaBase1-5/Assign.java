@@ -1,10 +1,10 @@
 /*
  * @Author: Marrido
  * @Date: 2022-02-10 21:57:31
- * @LastEditTime: 2022-02-10 22:07:35
+ * @LastEditTime: 2022-02-16 22:08:26
  * @LastEditors: Marrido
  * @Description: 
- * @FilePath: \Java\Assign.java
+ * @FilePath: \JavaBase\JavaBase1-5\Assign.java
  * Copyright (c) 2022 by Marrido, All Rights Reserved.
  */
 public class Assign {
