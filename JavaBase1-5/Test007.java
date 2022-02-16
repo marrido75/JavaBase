@@ -1,10 +1,10 @@
 /*
  * @Author: Marrido
  * @Date: 2022-02-14 20:05:41
- * @LastEditTime: 2022-02-14 20:38:05
+ * @LastEditTime: 2022-02-16 22:15:01
  * @LastEditors: Marrido
- * @Description: 
- * @FilePath: \Java\JavaBase\Test007.java
+ * @Description: 99乘法表
+ * @FilePath: \JavaBase\JavaBase1-5\Test007.java
  * Copyright (c) 2022 by Marrido, All Rights Reserved.
  */
 public class Test007 {

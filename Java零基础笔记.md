@@ -590,3 +590,140 @@ return;
 
 
 #### 实例
+
+```java
+for (int i = 0; i < 10; i++) {
+    if (i == 3) {
+        System.out.println("bug机");
+        return;
+        // break;
+        // continue;
+    }
+    System.out.println("lallal");
+}
+System.out.println("go on");
+```
+
+
+
+## 数组
+
+### 数组
+
+```java
+double[] hens = {3,5,1,3.4,2,50};
+double hens[] = {3,5,1,3.4,2,50};
+// 以上一样 
+// hens[0]访问数组中的元素
+// hens[0] 值 = 3 数组下标从0开始
+```
+
+1. 数组如果没有赋值，会默认赋值 
+
+   int short byte long  == 0
+
+   float double == 0.0   
+
+   char == \u0000
+
+   boolean ==false
+
+   String == null
+
+2. 数组使用步骤
+   1. 声明数组
+   2. 赋值
+   3. 使用数组
+   
+3. 数组下标必须在指定范围内使用 
+
+4. 数组属于引用类型，数组型数据是对象（object）
+
+#### 动态初始化
+
+```java 
+int a[] = new int[5];//实例2
+
+double a[]; // 实例3
+a = new double[5];//先声明 再分配空间
+
+```
+
+#### 静态初始化
+
+```java
+int a[] = { 1, 2, 3, 4, 5};
+```
+
+
+
+##### 实例
+
+```java
+double[] hens = { 3, 5, 1, 3.4, 2, 50};
+System.out.println("数组长度：" + hens.length);
+// hens.length 数组的长度
+// 遍历数组的所有元素的和
+// 第一个元素 hens[0] 第一个元素从0开始
+double sum = 0;
+for (int i = 0; i < hens.length; i++) {
+    sum += hens[i];
+}
+System.out.println("总体重" + sum + "avg" + sum / hens.length);
+```
+
+```java
+// 数组动态初始化1
+// 新建一个数组  输入数据  然后输出
+double score[] = new double[5];
+Scanner myScanner = new Scanner(System.in);
+for (int i = 0; i < score.length; i++) {
+    System.out.println("请输入第"+(i+1)+"个元素的值");
+    score[i] = myScanner.nextDouble();
+}
+for (int i = 0; i < score.length; i++) {
+    System.out.println(score[i]);
+}
+```
+
+```java
+// 求数组的最大值和下标
+// int a[] = {4,-1,9,10,23}
+int a[] = { 40, -1, -23, 9, 10 };
+int max = a[0];// 假设第一个值是最大值
+int n = 0;
+
+for (int i = 0; i < a.length; i++) {
+    if (a[i] > max) {
+        max = a[i];// 如果获取的元素大于max 就把该元素设置成最大值
+        n = i;// 并设置下标
+    }
+}
+System.out.println(max + "---" + n);
+```
+
+
+
+### 数组赋值机制
+
+```java
+// 基础数据类型赋值
+// 赋值方式为值拷贝,n2变化不会影响n1
+int n1 = 10;
+int n2 = n1;
+
+n2 = 80;
+System.out.println(n1);//10
+System.out.println(n2);//80
+
+// 数组默认是引用传递，赋值是地址，赋值方式是引用赋值
+// 是一个地址，arr2会影响到arr1,arr2改变，arr1也会改变
+int arr1[] = { 1, 2, 3 };
+int arr2[] =arr1;
+arr2[2] = 10;
+System.out.println("arr1的元素是：");
+for (int i = 0; i < arr1.length; i++) {
+    System.out.println(arr1[i]);// 1.2.10
+}
+```
+

@@ -3,10 +3,10 @@ import java.util.Scanner;
 /*
  * @Author: Marrido
  * @Date: 2022-02-13 21:03:18
- * @LastEditTime: 2022-02-13 21:31:10
+ * @LastEditTime: 2022-02-16 22:15:42
  * @LastEditors: Marrido
- * @Description: 
- * @FilePath: \Java\Test005.java
+ * @Description: 所有班级的平均分
+ * @FilePath: \JavaBase\JavaBase1-5\Test005.java
  * Copyright (c) 2022 by Marrido, All Rights Reserved.
  */
 public class Test005 {
