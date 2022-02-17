@@ -608,7 +608,7 @@ System.out.println("go on");
 
 ## 数组
 
-### 数组
+### 数组定义
 
 ```java
 double[] hens = {3,5,1,3.4,2,50};
@@ -772,5 +772,29 @@ for (int i = 0; i < arrR.length; i++) {
 for (int i = 0; i < arrR.length; i++) {
     System.out.println(arrR[i]);
 }//  66 55 44 33 22 11
+```
+
+
+
+### 数组添加
+
+```java
+// 数组添加元素
+int arr[] = { 1, 2, 3 };
+// arr[3]=4; 报错 下标越界
+int arrNew[] = new int[arr.length + 1];
+// 遍历arr 拷贝到 arrNew
+for (int i = 0; i < arr.length; i++) {
+    arrNew[i] = arr[i];
+}
+
+arrNew[arrNew.length - 1] = 4;
+
+arr = arrNew;
+
+for (int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+
 ```
 
