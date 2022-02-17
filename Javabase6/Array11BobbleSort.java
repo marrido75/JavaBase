@@ -1,7 +1,7 @@
 /*
  * @Author: Marrido
  * @Date: 2022-02-17 22:54:47
- * @LastEditTime: 2022-02-17 23:55:24
+ * @LastEditTime: 2022-02-18 00:05:49
  * @LastEditors: Marrido
  * @Description: 
  * @FilePath: \JavaBase\Javabase6\Array11BobbleSort.java
@@ -46,6 +46,40 @@ public class Array11BobbleSort {
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j]);
         }
+
+
+
+
+        // int[] arr = { 69, 24, 80, 57, 13 };
+        // // 循环出每轮更换的次数
+        // int len = arr.length-1;
+        // for (int i = 0; i < len; i++) {//需要4轮   数组长度-1
+        //     // 循环把大的值放在后面
+        //     for (int j = 0; j < len-i; j++) {//每轮调换的次数递减
+        //         int temp;
+        //         if (arr[j] > arr[j + 1]) {
+        //             temp = arr[j];//24
+        //             arr[j] = arr[j+1];//69
+        //             arr[j+1] = temp;//24
+        //         }
+        //     }
+        // }
+
+        // for (int j = 0; j < arr.length; j++) {
+        //     System.out.println(arr[j]);
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
