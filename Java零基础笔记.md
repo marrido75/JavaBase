@@ -787,7 +787,7 @@ int arrNew[] = new int[arr.length + 1];
 for (int i = 0; i < arr.length; i++) {
     arrNew[i] = arr[i];
 }
-
+//添加新元素
 arrNew[arrNew.length - 1] = 4;
 
 arr = arrNew;
@@ -796,5 +796,69 @@ for (int i = 0; i < arr.length; i++) {
     System.out.println(arr[i]);
 }
 
+```
+
+```java
+// 接收用户输入的值，动态添加数组
+
+Scanner myScanner = new Scanner(System.in);
+
+// 数组添加元素
+int arr[] = { 1, 2, 3 };
+
+do{
+    // arr[3]=4; 报错 下标越界
+    int arrNew[] = new int[arr.length + 1];
+    // 遍历arr 拷贝到 arrNew
+    for (int i = 0; i < arr.length; i++) {
+        arrNew[i] = arr[i];
+    }
+    System.out.println("请输入要添加的元素：");
+    int addNum = myScanner.nextInt();
+
+    arrNew[arrNew.length - 1] = addNum;
+
+    arr = arrNew;
+
+    for (int i = 0; i < arr.length; i++) {
+        System.out.println(arr[i]);
+    }
+
+    System.out.println("是否继续添加？ y/n");
+    char isAdd = myScanner.next().charAt(0);
+    if (isAdd != 'y') {
+        break;
+    }
+
+}while(true);
+```
+
+### 数组缩减
+
+```java
+// 缩减数组元素 剩余一个元素时提示不能再缩减
+Scanner myScanner = new Scanner(System.in);
+int arr[] = { 1, 2, 3, 4, 5 };
+do {
+    System.out.println("是否缩减数组元素？ y/n");
+    char isReduce = myScanner.next().charAt(0);
+    if (isReduce == 'y' && (arr.length - 2) >= 0) {
+
+        int arrNew[] = new int[arr.length - 1];
+        for (int i = 0; i < arrNew.length; i++) {
+            arrNew[i] = arr[i];
+        }
+        arr = arrNew;
+        System.out.println("arr剩余元素个数：" + arr.length);
+    } else {
+        if (arr.length == 1) {
+            System.out.println("只剩余一个元素不能再缩减了");
+        }
+        break;
+    }
+    for (int i = 0; i < arr.length; i++) {
+        System.out.println(arr[i]);
+    }
+} while (true);
 ```
 

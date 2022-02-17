@@ -1,7 +1,7 @@
 /*
  * @Author: Marrido
  * @Date: 2022-02-17 22:10:23
- * @LastEditTime: 2022-02-17 22:19:05
+ * @LastEditTime: 2022-02-17 22:21:15
  * @LastEditors: Marrido
  * @Description: 接收用户输入的值，动态添加数组
  * @FilePath: \JavaBase\Javabase6\Array09Add.java
@@ -20,7 +20,7 @@ public class Array09Add {
         // 数组添加元素
         int arr[] = { 1, 2, 3 };
 
-        do{
+        do {
             // arr[3]=4; 报错 下标越界
             int arrNew[] = new int[arr.length + 1];
             // 遍历arr 拷贝到 arrNew
@@ -44,7 +44,7 @@ public class Array09Add {
                 break;
             }
 
-        }while(true);
+        } while (true);
 
     }
 }
