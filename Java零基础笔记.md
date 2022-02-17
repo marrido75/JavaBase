@@ -884,6 +884,27 @@ do {
 // 13 24 57 69 80
 
 // 冒泡排序
+
+int[] arr = { 69, 24, 80, 57, 13 };
+// 循环出每轮更换的次数
+int len = arr.length-1;
+for (int i = 0; i < len; i++) {//需要4轮   数组长度-1
+    // 循环把大的值放在后面
+    for (int j = 0; j < len-i; j++) {//每轮调换的次数递减 len-1
+        int temp;
+        if (arr[j] > arr[j + 1]) {
+            temp = arr[j];//24
+            arr[j] = arr[j+1];//69
+            arr[j+1] = temp;//24
+        }
+    }
+}
+
+for (int j = 0; j < arr.length; j++) {
+    System.out.println(arr[j]);
+}
+
+
 int[] arr = { 69, 24, 80, 57, 13 };
 // 循环出每轮更换的次数
 int len = arr.length-1;
