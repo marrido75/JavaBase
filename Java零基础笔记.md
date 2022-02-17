@@ -727,3 +727,50 @@ for (int i = 0; i < arr1.length; i++) {
 }
 ```
 
+### 数组拷贝
+
+```java
+// 将arr1拷贝到arr2
+int arr1[] = { 10, 20, 30 };
+
+// 创建一个新数组arr2 开辟一个新的数据空间
+// 长度为arr1.length
+
+int arr2[] = new int[arr1.length];
+for (int i = 0; i < arr2.length; i++) {
+    arr2[i] = arr1[i];
+}
+
+arr2[0] = 100;
+
+for (int i = 0; i < arr1.length; i++) {
+    System.out.println(arr1[i]);
+}//arr1
+
+for (int i = 0; i < arr2.length; i++) {
+    System.out.println(arr2[i]);
+}//arr2
+// 改变arr2后 并未影响到arr1
+```
+
+1. 数组拷贝需要新开辟一个空数组（arr2），长度与原先数组(arr1)一样。
+2. 然后将原数组遍历写入新数组(arr2)中
+3. arr2改变元素，不会影响arr1
+
+### 数组反转（倒序排列）
+
+```java
+// 数组反转
+int arr[] = { 11, 22, 33, 44, 55, 66 };
+//建一个空数组
+int arrR[] = new int[arr.length];
+// 新数组按原数组倒叙写入新数组
+for (int i = 0; i < arrR.length; i++) {
+    arrR[arrR.length - 1 - i] = arr[i];
+}
+
+for (int i = 0; i < arrR.length; i++) {
+    System.out.println(arrR[i]);
+}//  66 55 44 33 22 11
+```
+
