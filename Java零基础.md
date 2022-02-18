@@ -1,10 +1,10 @@
 <!--
  * @Author: Marrido
  * @Date: 2022-02-10 22:50:43
- * @LastEditTime: 2022-02-14 22:46:15
+ * @LastEditTime: 2022-02-19 00:52:38
  * @LastEditors: Marrido
  * @Description: Java零基础
- * @FilePath: \Java\Java零基础.md
+ * @FilePath: \JavaBase\Java零基础.md
  * Copyright (c) 2022 by Marrido, All Rights Reserved.
 -->
 # Java零基础
@@ -17,7 +17,7 @@
 第03章 变量(P035 - P062)√
 第04章 运算符(P063 - P103) √
 第05章 程序控制结构(P104 - P155)   √
-第06章 数组、排序和查找(P156 - P191)p174
+第06章 数组、排序和查找(P156 - P191)p188
 第07章 面向对象编程（基础部分）(P192 - P263)
 第08章 面向对象编程（中级部分）(P264 - P361)
 第09章 房屋出租系统(P362 - P373)

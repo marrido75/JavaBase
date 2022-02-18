@@ -925,3 +925,150 @@ for (int j = 0; j < arr.length; j++) {
 }
 ```
 
+### 顺序查找
+
+```java
+// 查找数组中是否有你要的元素
+
+// 定义一个字符串数组
+String[] names = { "一", "二", "三", "四" };
+Scanner myScanner = new Scanner(System.in);
+System.out.println("请输入如名字：");
+String inputName = myScanner.next();
+int index = -1;
+for (int i = 0; i < names.length; i++) {
+    if (inputName.equals(names[i])) {
+        System.out.println("数组中有您查找的元素，下标是：" + i);
+        index = i;
+        break;
+    }
+}
+
+if (index == -1) {// 如果值没有改变 说明没有进入到for循环，就没有找到一样的值
+    System.out.println("没有您查找的元素");
+}
+```
+
+### 二维数组
+
+``` java
+// 二维数组
+int[][] arr = {
+    { 0, 0, 0, 0, 0, 0 },
+    { 0, 0, 1, 0, 0, 0 },
+    { 0, 2, 0, 3, 0, 0 },
+    { 0, 0, 0, 0, 0, 0 }
+};
+
+for (int i = 0; i < arr.length; i++) {//遍历二维数组的每个元素（一维数组）
+    //遍历二维数组中的每个元素（一维数组）
+    for (int j = 0; j < arr[i].length; j++) {
+        System.out.print(arr[i][j]+"\t");
+    }
+    System.out.println();
+}
+
+// 数组访问  arr[i][j]
+System.out.println(arr[2][3]);//
+```
+
+1. 二维数组中的每个元素是一个一维数组
+
+#### 二维数组动态初始化
+
+```java
+// 二维数组动态初始化1
+int[][] arr = new int[2][3];// 2行 3列
+// 二维数组动态初始化2
+int[][] arr;
+arr = new int[2][3];
+
+arr[1][1]  = 8;//改变第二个一维数组的第二个
+// 遍历
+for (int i = 0; i < arr.length; i++) {
+    for (int j = 0; j < arr[i].length; j++) {
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+
+// 0 0 0
+// 0 8 0
+```
+
+##### 列数不确定数组
+
+```java
+// 列数不确定数组
+int[][] arr = new int[5][];//创建一个二维数组，但是只能确定一维数组的个数
+
+for (int i = 0; i < arr.length; i++) {//遍历Arr每个一维数组
+    // 给每个一维数组开空间
+    // 如果没给一位数组new ,那么arr[i]就是null
+    arr[i] = new int[i + 1];
+    // 遍历一维数组，并给一位数组每个元素赋值
+    for (int j = 0; j < arr[i].length; j++) {
+        arr[i][j] = i + 1;
+    }
+}
+
+// 遍历
+for (int i = 0; i < arr.length; i++) {
+    for (int j = 0; j < arr[i].length; j++) {
+        System.out.print(arr[i][j]+" ");
+    }
+    System.out.println();
+}
+
+//1
+//2 2
+//3 3 3
+//4 4 4 4
+//5 5 5 5 5 
+```
+
+#### 二维数组静态初始化
+
+```java
+int[][] = {
+    {1,2,3},
+    {2},
+    {1,2}
+};
+```
+
+##### 杨辉三角
+
+```java
+// 1
+// 1 1
+// 1 2 1
+// 1 3 3 1
+// 1 4 6 6 4 1
+// 1 5 10 10 5 1
+
+int[][] yangHui = new int[10][];
+for (int i = 0; i < yangHui.length; i++) {//遍历杨辉的每个元素
+    yangHui[i] = new int[i + 1];//给每行开空间
+    // 给每一行赋值
+    for (int j = 0; j < yangHui[i].length; j++) {
+        //每一行的第一个元素和最后一个都是1
+        if (j == 0 || j == yangHui[i].length - 1) {
+            yangHui[i][j] = 1;
+
+        } else {//中间元素等于上面一个元素+上面元素-1
+            yangHui[i][j] = yangHui[i - 1][j] + yangHui[i - 1][j - 1];
+        }
+    }
+}
+
+for (int i = 0; i < yangHui.length; i++) {
+    for (int j = 0; j < yangHui[i].length; j++) {
+        System.out.print(yangHui[i][j]+" ");
+    }
+    System.out.println();
+}
+```
+
+
+
