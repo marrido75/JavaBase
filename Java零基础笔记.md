@@ -1072,3 +1072,102 @@ for (int i = 0; i < yangHui.length; i++) {
 
 
 
+## 类和对象（面向对象）
+
+```java
+public class Object01 {
+    public static void main(String[] args) {
+        // 类 对象
+        // OOP面向对象
+        // 实例化一个猫
+        // 穿件一直买赋值给cat1
+        // cat1 cat2就是对象
+        Cat cat1 = new Cat();
+        cat1.name = "小白";
+        cat1.age = 3;
+        cat1.color = "白色";
+        Cat cat2 = new Cat();
+        cat2.name = "小花";
+        cat2.age = 100;
+        cat2.color = "花色";
+        
+        // 怎么使用 访问对象的属性
+        System.out.println("第1只猫的信息:" + " " + cat1.name + " "
+                           + cat1.age + " " + cat1.color);
+        System.out.println("第2只猫的信息:" + " " + cat2.name + " "
+                           + cat2.age + " " + cat2.color);
+    }
+}
+
+// 定义一个猫类
+class Cat {
+    String name;
+    int age;
+    String color;
+}
+```
+
+注意事项：
+
+1. 属性的定义语法同变量 示例：访问修饰符 属性类型 属性名
+
+   ——public  proctected 默认 private
+
+2. 属性类型：包含基本类型和引用类型
+
+3. 
+
+```java
+public class Object03 {
+    public static void main(String[] args) {
+        // P1是对象名（对象引用）
+        // new Person()这才是真正的对象
+        Person p1 = new Person();
+
+        // 对象的默认值
+
+        System.out.println("当前这个人的信息：");
+        System.out.println(p1.name + " " + p1.age + " "
+                + p1.sal + " " + p1.isPass);
+                // null 0 0.0 false
+    }
+}
+
+class Person {
+    // 四个属性
+    int age;
+    String name;
+    double sal;
+    boolean isPass;
+}
+```
+
+### 如何创建
+
+ 1. 先声明再创建
+
+    ```java
+    Cat cat;
+    cat = new Cat();
+    ```
+
+ 2. 如何访问属性
+
+    ```java
+    cat.name;
+    cat,age;
+    cat.color;
+    ```
+
+### 类和对象的内存分配机制
+
+```java
+Person p1 = new Person();
+p1.age = 10;
+p1.name = "小明";
+Person p2 = p1;//把p1赋值给p2
+System.out.println(p2.age);
+//10 p2引用的p1,p2会跟随p1变化
+//互相影响
+```
+
