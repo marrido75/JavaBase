@@ -1,9 +1,9 @@
 /*
  * @Author: Marrido
  * @Date: 2022-02-20 23:20:39
- * @LastEditTime: 2022-02-20 23:35:33
+ * @LastEditTime: 2022-02-20 23:49:00
  * @LastEditors: Marrido
- * @Description: 
+ * @Description: 基础数据类型   形参变量改变不会影响实参的变量
  * @FilePath: \JavaBase\JavaBase07\MethodParam01.java
  * Copyright (c) 2022 by Marrido, All Rights Reserved.
  */
@@ -16,7 +16,7 @@ public class MethodParam01 {
         int b = 20;
         A1 obj = new A1();
         obj.swap(a, b);
-        System.out.println("a=" + a + " b=" + b);
+        System.out.println("a=" + a + " b=" + b);//10 20
     }
 }
 

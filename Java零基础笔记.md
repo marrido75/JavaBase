@@ -1314,3 +1314,57 @@ class Persons {
 }
 ```
 
+### 成员方法的传参机制
+
+1. 基础数据类型的变量 形参不会影响实参
+
+```java
+public class MethodParam01 {
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = 20;
+        A1 obj = new A1();
+        obj.swap(a, b);
+        System.out.println("a=" + a + " b=" + b);//10 20
+    }
+}
+
+class A1 {//下面的值不会影响上面的基础数据类型的变量的值，用完之后 a b 还是原来的数
+    public void swap(int a, int b) {
+        System.out.println("a和b交换前的值" + a + " " + b);
+        int tmp = a;
+        a = b;
+        b = tmp;
+        System.out.println("a和b交换后的值" + a + " " + b);
+    }
+}
+```
+
+2. 引用类型的变量， 形参的改变 实参也会改变
+
+```java
+public class MethodParam02 {
+    public static void main(String[] args) {
+        // 引用类型的变量， 形参的改变 实参也会改变
+        B1 b = new B1();
+        int[] arr = { 1, 2, 3 };
+        System.out.println("main");
+        b.test1000(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+ "\t");
+        }
+    }
+}
+
+class B1 {
+    public void test1000(int[] arr) {
+        arr[0] = 200;//引用数据类型的值改变了。使用的是同一个地址。所以arr改变了
+        System.out.println("test100");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+ "\t");
+        }
+    }
+}
+```
+
