@@ -1174,6 +1174,91 @@ System.out.println(p2.age);
 ### 成员方法
 
 ```java
+//定义
+//访问修饰符 返回数据类型 方法名（形参列表）{
+	//语句；
+	//return 返回值；
+//}
+```
+
+#### 注意事项和细节
+
+1. 访问修饰符（作用是控制 方法使用的范围）
+
+   如果不写 是默认
+
+2. 返回数据类型
+
+   1. 一个方法最多有一个返回值 （多个返回值用数组返回 int[] ）
+
+   2. 如果有返回值类型, 方法中必须有return返回值（具体的值）
+
+      ——返回类型必须一致，或可以自动转换的类型
+
+      ```java
+      public int[] getArr(int a, int b){
+          return a;
+      }
+      ```
+
+   3. 如果是void ，方法体中不能有return语句，或者只写return;
+
+   4. 方法名：驼峰法    getArr，实际工作中方法名要有一定含义，最好见名知意
+
+3. 形参列表
+
+   1. 一个方法可以没有参数，也可以是多个参数
+   2. 参数可以是多个类型（基本类型或引用类型）
+   3. 调用方法时，参数类型（实际参数）需要和类定义的参数（形式参数）类型一致
+   4. 类中方法定义了几个形式参数，调用时就需要传入对应的实际参数个数
+
+4. 方法体
+
+   1. 类下面的方法体中不能再定义方法体
+
+5. 方法调用细节说明
+
+   1. 同类中的方法调用可以直接调用
+
+   2. 跨类的方法调用，需要先实例化对象，再调用方法
+
+      ```java
+      public class Method03 {
+          public static void main(String[] args) {
+              C c = new C();// 跨类需要创建B对象
+              int e = c.m3(1);// 再调用方法
+              System.out.println(e);//结果输出1
+          }
+      }
+      
+      class B {
+          public int m1(int a) {
+              return a;
+          }
+      
+          public int m2(int a) {
+              int b = m1(1);// 同一个类中方法直接调用
+              return b;
+          }
+      }
+      
+      class C {
+          public int m3(int c) {
+              B b = new B();// 跨类需要创建B对象
+              int d=b.m2(c);// 再调用方法
+              return d;
+          }
+      }
+      ```
+
+      
+
+      
+
+#### 实例
+
+```java
+
 public class Method01 {
     public static void main(String[] args) {
         // 方法使用
