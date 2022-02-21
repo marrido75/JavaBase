@@ -1368,3 +1368,178 @@ class B1 {
 }
 ```
 
+### 克隆对象
+
+```java
+//编写一个copyPerson,可以赋值Person对象,返回赋值的对象。克隆对象。注意得到的新对象和原来的对象是两个独立的对象，只是他们属性相同
+
+public class MethodCopy02 {
+    public static void main(String[] args) {
+        // 先实例化Dog对象
+        Dog dog = new Dog();
+        // 克隆Dog对象
+        DogClone dog2 = new DogClone();
+
+        //  创建d2用来调用
+        Dog d2 = dog2.dogClone(dog);
+        d2.name = "大黄";
+        d2.age = 3;
+        System.out.println("dogclone "+d2.age);
+    }
+}
+
+class Dog {
+    int age;
+    String name;
+    public void eat() {
+        System.out.println("狗在吃饭！");
+    }
+}
+
+// 克隆Dog类
+
+class DogClone {
+    public Dog dogClone(Dog d) {
+        // 创建对象
+        Dog dog2 = new Dog();
+        // 赋值赋值
+        dog2.age = d.age;
+        dog2.name = d.name;
+        // 返回
+        return dog2;
+    }
+}
+```
+
+
+
+### 递归调用
+
+1. 只要方法中有执行方法就会开辟一个新的受保护的空间（栈空间）
+2. 方法局部变量互不影响
+3. 如果方法中使用的引用类型变量（数组 对象），就会影响其他栈空间的变量
+4. 栈递归必须向退出递归的条件靠近 否则会无限递归
+5. 放一个方法执行完毕 或者遇到return 就会返回，遵守谁调用就讲结果返回给谁 。同时当方法执行完毕或者返回时，该方法也就执行完毕
+
+```java
+public class Recursion01 {
+    public static void main(String[] args) {
+        T1 t = new T1();
+        t.test(4);
+        // n = 2
+        // n = 3
+        // n = 4
+    }
+
+}
+
+class T1 {
+    public void test(int n) {
+        if (n > 2) {
+            test(n - 1);//这里又运行了test()方法
+        }
+        System.out.println("n = " + n);
+    }
+}
+```
+
+
+
+![](C:\Users\marri_9\Desktop\JavaBase\笔记图片\Snipaste_2022-02-21_22-48-55.png)
+
+
+
+```java
+public class Recursion02 {
+    public static void main(String[] args) {
+        T2 t2 = new T2();
+        int res= t2.factorial(5);
+        System.out.println("res = "+ res);
+    }
+}
+
+class T2 {
+    // 阶乘
+    public int factorial(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            return factorial(n - 1) * n;
+        }
+    }
+}//120
+```
+
+![](C:\Users\marri_9\Desktop\JavaBase\笔记图片\Snipaste_2022-02-21_23-02-22.png)
+
+#### 实例
+
+```java
+public class Recursion03Test {
+    public static void main(String[] args) {
+        T3 t = new T3();
+        int fbl = t.Fib(7);
+        System.out.println("菲波拉契数是" + fbl);
+    }
+}
+
+class T3 {
+    /**
+     * 使用递归求出斐波那契数 1.1.2.3.5.8.13....
+     * 给一个整数N 求出值
+     */
+    public int Fib(int n) {
+        if (n >= 1) {
+            if (n == 1 || n == 2) {
+                return 1;
+            } else {
+                return Fib(n - 1) + Fib(n - 2);
+            }
+        } else {
+            System.out.println("要求输入的数>1的整数");
+            return -1;
+        }
+    }
+}
+
+```
+
+```java
+public class Recursion04Test {
+    public static void main(String[] args) {
+        T4 t = new T4();
+        int day = 1;
+        int peachNum = t.peach(day);
+        if (peachNum != -1) {
+            System.out.println("第" + day + "天有" + peachNum + "个桃子");
+        }
+    }
+}
+
+class T4 {
+    public int peach(int day) {
+        /**
+         * 有一堆桃子，第一天吃了其中的一半，并再多吃一个。
+         * 以后每一天都吃其中一半，再多吃一个。
+         * 当到第10天时，发现只有一个桃子。
+         * 问最初有多少个桃子
+
+         * 第10天 1
+         * 第9天 (day9+1)*2 = 4
+         * 第8天 (day8+1)*2 = 20
+         */
+        // n/2-1 =1
+        if (day == 10) {
+            return 1;
+        } else if (day >= 1 && day <= 9) {
+            return (peach(day + 1) + 1) * 2;
+        } else {
+            System.out.println("day要在1-10");
+            return -1;
+        }
+    }
+}
+```
+
+
+
