@@ -1,9 +1,9 @@
 /*
  * @Author: Marrido
  * @Date: 2022-02-22 22:38:38
- * @LastEditTime: 2022-02-22 23:14:50
+ * @LastEditTime: 2022-02-22 23:19:25
  * @LastEditors: Marrido
- * @Description: 
+ * @Description: 迷宫
  * @FilePath: \JavaBase\JavaBase07\MiGong02.java
  * Copyright (c) 2022 by Marrido, All Rights Reserved.
  */
@@ -66,7 +66,7 @@ public class MiGong02 {
     }
 }
 
-// 0能走 1不能走 2为标记路线
+// 0能走 1不能走 2为标记路线 3已经走过
 class Mg {
     public boolean MiGong(int map[][], int x, int y) {
         // 判断是否已经到达位置
@@ -85,7 +85,8 @@ class Mg {
                     return true;
                 } else if (MiGong(map, x, y - 1)) {// 左
                     return true;
-                } else {
+                } else {//都走不通时
+                    map[x][y] = 3;
                     return false;
                 }
             } else {
