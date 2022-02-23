@@ -1722,3 +1722,149 @@ class RecRes {
 封装成一个可变参数的方法 */
 ```
 
+
+
+### 变量作用域
+
+```java
+public class VarScope01 {
+    public static void main(String[] args) {
+        Cat02 c = new Cat02();
+        c.cry();
+
+        // 调用Cat03,输出age
+        Cat03 c1 = new Cat03();
+        c1.test();// 10
+
+        // 调用Cat04,输出age
+        Cat04 c2 = new Cat04();
+        c2.test(c);// 10
+    }
+}
+
+class Cat02 {
+    // 全局变量（属性） 作用域是整个类体中
+    public int age = 10;// 可直接在 say cry方法中使用
+    // 全局变量是可以加修饰符的
+    private double weight;// 全局变量可以不赋值有默认值
+
+    public void say() {
+        // 1.局部变量一般指在成员方法中定义的变量
+        // 2.局部变量必须赋值才能使用，局部变量没有默认值
+
+        // a和name只能在say方法中使用
+        int a = 100;
+        String name = "moco";
+        System.out.println(a);// 局部变量
+        System.out.println(name);// 局部变量
+        System.out.println(age);// 全局变量
+    }
+
+    public void cry() {
+        int age = 100;
+        System.out.println(age);// 全局变量和局部变量重名，就近原则100
+        System.out.println(weight);// 全局变量,有默认值0.0
+    }
+}
+
+class Cat03 {
+    public void test() {
+        // 创建对象然后调用另一个类中的全局变量
+        Cat02 c = new Cat02();
+        System.out.println(c.age);
+    }
+}
+
+class Cat04 {
+    // 直接把Cat02对象传入本方法，然后直接调用cat02中的全局变量
+    public void test(Cat02 c) {
+        System.out.println(c.age);
+    }
+}
+```
+
+1. 全局变量和局部变量可以重名的，使用就近原则
+2. 成员方法中的局部变量不能重名
+
+![image-20220223221503926](C:\Users\marri_9\Desktop\JavaBase\笔记图片\image-20220223221503926.png)
+
+4. 作用域范围不同
+   1. 全局变量（属性）可以倍本类使用或者被其他类使用（通过对象调用）
+   2. 局部变量只能在本类中使用
+5. 修饰符不同
+   1. 全局变量/属性前面可以加修饰符
+   2. 局部变量前面不可以加修饰符
+
+
+
+### 构造方法/构造器
+
+```java
+//修饰符 方法名（形参列表）{
+	//方法体;
+//}
+
+// 构造方法又叫构造器，是类的一种特殊的方法,它的主要作用是完成对新对象的初始化
+//特点
+	//1.方法名和类名相同
+	//2.没有返回值
+	//3.在创建对象时系统会自动调用该类的构造器来初始化
+
+public class Constractor01 {
+    public static void main(String[] args) {
+
+        // Cperson cp = new Cperson("jack");
+        // System.out.println(cp.name+" "+cp.age);
+
+        Cperson cp = new Cperson("大黄",10);
+        System.out.println(cp.name+" "+cp.age);
+    }
+}
+
+class Cperson {
+    String name;
+    int age;
+
+    // 构造器
+    public Cperson(String pNmae, int pAge) {
+        System.out.println("构造器1被调用");
+        name = pNmae;
+        age = pAge;
+    }
+
+    // 构造器重载
+    public Cperson(String pNmae) {
+        System.out.println("构造器2被调用");
+        name = pNmae;
+    }
+}
+```
+
+1. 构造器的修饰符可以使默认的 public protected pravate
+2. 构造器没有返回值
+3. 方法名和类目必须一致
+4. 参数列表和成员方法一样的规则
+5. 构造器的调用，由系统完成
+
+注意事项
+
+1. 一个类可以定义多个不同的构造器（构造器重载）
+2. 构造器名和类名要一致
+3. 构造器没有返回值i
+4. 构造器是对对象的初始化，不是创建对象
+5. 在创建对象时，系统自动调用该类的构造器方法
+6. 如没有定义构造器，系统会生成一个默认构造器
+7. 如果定义了自己的构造器，就不能再使用无参构造器
+
+```java
+class Dog{
+    int a;
+    //构造器
+    public dog(string da){
+        a =da;
+    }
+}
+```
+
+
+
