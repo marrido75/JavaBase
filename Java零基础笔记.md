@@ -1543,3 +1543,182 @@ class T4 {
 
 
 
+### 方法重载
+
+```java
+public class OverLoad01 {
+    public static void main(String[] args) {
+        //方法重载
+        MyCalc calc = new MyCalc();
+        int a = calc.calcSum(1, 1);
+        double b = calc.calcSum(1, 1.1);
+        double c = calc.calcSum(1.1, 1);
+        int d = calc.calcSum(1, 1, 1);
+        System.out.println(a + " " + b + " " + c + " " + d);
+    }
+}
+
+class MyCalc {
+    // 形参不一样  方法名相同
+    public int calcSum(int a, int b) {
+        return a + b;
+    }//两个整数的和
+    
+    public double calcSum(int a, Double b) {
+        return a + b;
+    }//一个整数一个double的和
+
+    public double calcSum(double a, int b) {
+        return a + b;
+    }
+
+    public int calcSum(int a, int b, int c) {
+        return a + b + c;
+    }//三个整数的和
+}
+```
+
+1. 方法名必须相同
+2. 形参列表：必须不同，或有一个不同，或个数不同，或顺序不同
+3. 返回类型无要求
+
+#### 实例
+
+```java
+public class OverLoad02 {
+    public static void main(String[] args) {
+        Methods01 calc = new Methods01();
+        System.out.println(calc.calc02(2) + " " + calc.calc02(2, 3)
+                + " " + calc.calc02("啊啊啊啊"));
+        System.out.println(calc.toMax(9, 10, 11));
+    }
+}
+
+// 1.编写程序，类 Methods 中定义三个重载方法并调用。方法名为 m。
+// 三个方法分别接收一个 int 参数、两个 int 参数、一个字符串参数。
+// 分别执行平方运算并输出结果， 相乘并输出结果，输出字符串信息。
+// 在主类的 main ()方法中分别用参数区别调用三个方法
+
+// 2.定义三个重载方法 max()，第一个方法，返回两个 int 值中的最大值，
+// 第二个方法，返回两个 double 值中的最大值，第三个方法
+
+class Methods01 {
+    public int calc02(int a) {
+        return a * a;
+    }
+
+    public int calc02(int a, int b) {
+        return a * b;
+    }
+
+    public String calc02(String a) {
+        return a;
+    }
+
+    public int toMax(int a, int b) {// 判断两个整数中最大值
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+        //return a>b?a:b;
+    }
+
+    public double toMax(double a, double b) {// 判断两个double中最大值
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+        
+        //return a>b?a:b;
+    }
+
+    public double toMax(double a, double b, double c) {// 判断两个double中最大值
+        double max1 = a > b ? a : b;
+        max1 = max1 > c ? max1 : c;
+        return max1;
+        // if (a > b) {
+        // if (a > c) {
+        // return a;
+        // } else {
+        // return c;
+        // }
+        // } else {
+        // return b;
+        // }
+    }
+}
+```
+
+
+
+### 可变参数
+
+```java
+//访问修饰符 返回类型 方法名（数据类型... 变量名）{
+	//语句
+//}
+```
+
+```java
+public class VarParam {
+    public static void main(String[] args) {
+        CalcSums calc = new CalcSums();
+        System.out.println(calc.sum(1, 2, 3));
+    }
+}
+
+class CalcSums {
+    // public int sums(int n1, int n2) {
+    // 		return n1 + n2;
+    // }
+
+    // public int sums(int n1, int n2, int n3) {
+    // 		return n1 + n2 + n3;
+    // }
+
+    // public int sums(int n1, int n2, int n3, int n4) {
+    // 		return n1 + n2 + n3 + n4;
+    // }
+    // 以上三个方法相同 参数不同
+
+    public int sum(int... nums) {
+        int res = 0;
+        // 把接收到参数看成是一个一维数组
+        for (int i = 0; i < nums.length; i++) {
+            res += nums[i];
+        }
+        return res;
+    }
+}
+```
+
+
+
+```java
+public class VarParam02 {
+    public static void main(String[] args) {
+        RecRes res = new RecRes();
+
+        System.out.println(res.calcRes("小明", 99, 86.5, 100));
+    }
+}
+
+class RecRes {
+    public String calcRes(String name, double... Scores) {
+        double scoreSum = 0.0;
+        for (int i = 0; i < Scores.length; i++) {
+            scoreSum += Scores[i];
+        }
+
+        return name + "的" + Scores.length + "门课成绩总分为：" + scoreSum;
+    }
+}
+
+/*有三个方法，分别实现返回姓名和两门课成绩(总分)， 
+返回姓名和三门课成绩(总分)，
+返回姓名和五门课成绩（总分）。 
+封装成一个可变参数的方法 */
+```
+
