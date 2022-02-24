@@ -1868,3 +1868,90 @@ class Dog{
 
 
 
+### this关键字
+
+```java
+// java虚拟机会给每个对象分配this,代表当前对象。
+```
+
+
+
+```java
+public class This01 {
+    public static void main(String[] args) {
+        Dog03 d1 = new Dog03("大壮", 3);
+        d1.info();// 大壮 3
+        System.out.println(d1.hashCode());
+
+        Dog03 d2 = new Dog03("大黄", 2);
+        d2.info();// 大黄 2
+        System.out.println(d2.hashCode());
+    }
+}
+
+class Dog03 {
+    String name;
+    int age;
+
+    // 构造器
+    public Dog03(String name, int age) {
+        // this.name就是当前对象的name属性（全局变量）
+        this.name = name;
+        this.age = age;
+    }
+
+    // 如果构造器的形参能够直接写成属性名就更好了。
+    // info成员方法
+    public void info() {
+        // 输出对象的属性信息
+        System.out.println(name + " " + age);
+        System.out.println(this.hashCode());
+    }
+}
+```
+
+1. this可以用来访问本类的属性 方法 构造器
+2. this可以去氛当前类的属性和局部变量
+3. 访问成员方法的语法：this.方法名（参数列表）
+4. 访问构造器：this(参数列表)**只能在构造器中使用**，不能在方法中使用
+5. this不能再类定义的外部使用。只能在类定义的方法中使用
+
+```java
+public class This02 {
+    public static void main(String[] args) {
+        Test03 t = new Test03();
+        t.f2();
+
+
+    }
+}
+
+class Test03 {
+    int age = 10;
+
+    // this访问构造器
+    public Test03() {
+        this("大旺", 100);// this访问构造器必须放在第一天语句
+        System.out.println("构造器T1");
+    }
+
+    public Test03(String name, int age) {
+        System.out.println("构造器T2");
+    }
+
+    public void f1() {
+        int age = 11;
+        System.out.println("调用f1方法" + age);//11
+        System.out.println("调用f1方法" + this.age);//10
+    }
+
+    public void f2() {
+        // 调用本类f1\
+        // 1.
+        // f1();
+        // 2.
+        this.f1();
+    }
+}
+```
+
