@@ -28,8 +28,7 @@ class Tom {
 
     public int cGame() {
         // 电脑随机出拳
-        int cGame = (int) (Math.random() * 3);
-        return cGame;
+        return (int) (Math.random() * 3);
     }
 
     public void cVsTom(int n) {
@@ -43,9 +42,7 @@ class Tom {
                 System.out.println("赢");
             } else if (n == 2 && c == 0) {
                 System.out.println("赢");
-            } else if (n == c) {
-                System.out.println("平手");
-            }else{
+            } else{
                 System.out.println("你输了");
             }
         }
