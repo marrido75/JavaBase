@@ -1,4 +1,4 @@
-package com.use;
+package src.com.use;
 
 import com.xiaoming.Dog;
 
@@ -12,6 +12,12 @@ public class Test {
         System.out.println(dog1);
 
     }
+
+
+}
+
+class T{
+
 }
 
 

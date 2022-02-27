@@ -1,4 +1,4 @@
-package com.modifier;
+package src.com.modifier;
 
 public class Test {
     public static void main(String[] args) {

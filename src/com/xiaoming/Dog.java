@@ -1,4 +1,4 @@
-package com.xiaoming;
+package src.com.xiaoming;
 
 public class Dog {
     public static void main(String[] args) {
