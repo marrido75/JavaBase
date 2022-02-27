@@ -12,6 +12,12 @@ public class Test {
         System.out.println(dog1);
 
     }
+
+
+}
+
+class T{
+
 }
 
 
