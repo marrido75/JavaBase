@@ -1,4 +1,4 @@
-package com.modifier;
+package src.com.modifier;
 
 public class B {
     public void say(){

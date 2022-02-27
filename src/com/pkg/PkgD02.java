@@ -2,7 +2,7 @@
 //一个类最多只有一句package
 
 
-package com.pkg;
+package src.com.pkg;
 
 
 //import 在package下面 ，类定义上面  可以多句，没有顺序顺序

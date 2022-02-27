@@ -1,4 +1,4 @@
-package com.use;
+package src.com.use;
 
 import com.xiaoming.Dog;
 
