@@ -1,4 +1,4 @@
-package src.com.pkg;
+package com.pkg;
 
 //导入包
 import java.util.Scanner;//建议使用

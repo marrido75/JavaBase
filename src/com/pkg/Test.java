@@ -1,7 +1,6 @@
-package src.com.pkg;
+package com.pkg;
 
-
-import src.com.modifier.A;
+import com.modifier.A;
 
 public class Test {
     public static void main(String[] args) {

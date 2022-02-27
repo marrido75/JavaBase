@@ -1,4 +1,4 @@
-package src.com.xiaoqiang;
+package com.xiaoqiang;
 
 public class Dog {
     public static void main(String[] args) {

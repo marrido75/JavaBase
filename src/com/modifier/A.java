@@ -1,4 +1,4 @@
-package src.com.modifier;
+package com.modifier;
 
 public class A {
     public int n1 = 100; //都可以访问
