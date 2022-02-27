@@ -1,6 +1,7 @@
 package com.modifier;
 
 public class A {
+
     public int n1 = 100; //都可以访问
     protected int n2 = 200; //本包可以访问
     int n3 = 300;   //同类同包可以
