@@ -1,4 +1,4 @@
-package com.hspedu.Extends.improve;
+package com.hspedu.extend.improve;
 
 //父类, 是pupil 和 graduate 的父类
 public class Student {

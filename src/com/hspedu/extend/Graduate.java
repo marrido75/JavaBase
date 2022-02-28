@@ -1,4 +1,4 @@
-package com.hspedu.Extends;
+package com.hspedu.extend;
 
 public class Graduate {
     public String name;

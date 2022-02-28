@@ -1,4 +1,4 @@
-package com.hspedu.Extends.improve;
+package com.hspedu.extend.improve;
 
 public class Pupil extends Student {
     public void testing() {
